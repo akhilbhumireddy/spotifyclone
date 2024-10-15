@@ -1,0 +1,39 @@
+.control-panel {
+  width: 250px;
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  max-height: calc(100vh - 80px); /* Allows for scrolling */
+}
+
+.panel-title {
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.panel-options {
+  list-style: none;
+  padding: 0;
+}
+
+.panel-options li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #bbb;
+  cursor: pointer;
+}
+
+.panel-options li:hover {
+  color: white;
+}
+
+.panel-options li svg {
+  margin-right: 10px;
+  font-size: 22px;
+}
