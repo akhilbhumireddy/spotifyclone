@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+# Title
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Spotify Clone - Playlist and Feeds Integration**
 
-## Available Scripts
+## Objective
 
-In the project directory, you can run:
+The goal of this assignment is to develop a front-end feature that mimics a Spotify-like playlist UI. You will create a single-page application (SPA) with a left-side menu, main playlist section, and an interactive video feed slider. This project will integrate APIs to fetch playlists and video feeds dynamically.
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: HTML, CSS, JavaScript/React
+- **APIs**: REST API Integration
+- **Deployment**: Netlify
+- **Version Control**: GitHub
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Completion Instructions
 
-### `npm test`
+### Functionality
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Must Have
 
-### `npm run build`
+- Create a left menu showing playlists and feed objects.
+- Implement a center section displaying playlists with the first video as the cover thumbnail.
+- On clicking a playlist card, open a side slider to display the list of video items.
+- Use the **`getAllPlayList`** API to fetch and display all available playlists.
+- Display the total number of videos for each playlist.
+- Bind each playlist name with the appropriate group of post IDs.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Nice to Have
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Include smooth UI/UX interactions for opening/closing the side slider.
+- Make the layout responsive for both desktop and mobile devices.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Guidelines to develop a project
 
-### `npm run eject`
+#### Must Have
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Follow the provided **Figma design prototype** for layout inspiration:  
+  [Figma Design](https://www.figma.com/proto/TxyrZ70tJvV6yiGm5mHedL/blaash-2?node-id=0-1)
+- Implement the left menu, main section, and slider exactly as per the design.
+- Use the **APIs** properly by ensuring the right request headers and body parameters.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Nice to Have
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Follow best practices for React component structure or JavaScript functions.
+- Use modern CSS practices like Flexbox or Grid for layout management.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Submission Instructions
 
-## Learn More
+#### Must Have
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Push your code to the following **GitHub repository**:  
+  [GitHub Repository](https://github.com/akhilbhumireddy/spotifyclone.git)
+- Ensure the deployed version is live at:  
+  [Netlify Deployment](https://spotifycloneakhils.netlify.app)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Nice to Have
 
-### Code Splitting
+- Add inline comments explaining the logic of key functions.
+- Attach a demo video or screenshots of the working project.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Resources
 
-### Analyzing the Bundle Size
+### Design Files
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Use the following Figma design as a reference:  
+  [Figma Design](https://www.figma.com/proto/TxyrZ70tJvV6yiGm5mHedL/blaash-2?node-id=0-1)
 
-### Making a Progressive Web App
+### APIs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+#### API 1: Get All Playlists
 
-### Advanced Configuration
+- **Endpoint**:  
+  `https://5yiek6g5g0.execute-api.ap-south-1.amazonaws.com/Prod/api/engt/getAllPlayList`
+- **Method**: POST
+- **Request Body**:
+  ```json
+  {
+    "Content_Type": 2
+  }
+  ```
+- **Headers**:
+  {
+  X-Api-Key: MXqO3cDcr492OTPGZZAot7akPvLmfKbA4bKt5RyrX-Tenant-Key: TYKE070323
+  }
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Description: Use this API to fetch the list of playlists and their associated post IDs.
 
-### Deployment
+### API 2: Get Feeds
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+**Endpoint**:
+`https://5yiek6g5g0.execute-api.ap-south-1.amazonaws.com/Prod/api/engt/getfeeds_v1`
 
-### `npm run build` fails to minify
+**Method**: POST
+**Request Body**:
+json
+{
+"Index": 1,
+"ContentType": [2],
+"IsTagged": false,
+"URL": ""
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Headers**:
+{
+X-Api-Key: MXqO3cDcr492OTPGZZAot7akPvLmfKbA4bKt5Ryr  
+ X-Tenant-Key: TYKE070323
+}
+
+- Description: This API fetches the individual video posts available in the feed.
+
+### Third-party Packages:
+
+- React: For frontend development.
+- Axios or Fetch API: For API calls.
